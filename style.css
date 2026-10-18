@@ -1,5 +1,7 @@
 main {
   text-align: center;
+  background-color: rgb(227, 227, 233);
+  flex-wrap: wrap;
 }
 
 .info {
@@ -11,4 +13,20 @@ main {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
+}
+
+.characters {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+img {
+  width: 90px;
+  height: 100px;
+}
+
+.crew {
+  border: 2px solid rgb(21, 12, 105);
+  padding: 10px;
 }
