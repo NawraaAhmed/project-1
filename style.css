@@ -30,3 +30,7 @@ img {
   border: 2px solid rgb(21, 12, 105);
   padding: 10px;
 }
+
+.hidden {
+  display: none;
+}
