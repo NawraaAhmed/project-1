@@ -1,4 +1,4 @@
-# Whack-a-Pirate
+# Whack-a-Pirate🏴‍☠️
 
 ## Technologies Used
 
@@ -10,16 +10,32 @@
 
 Whack-a-Pirate is a fun browser game based on the classic _Whack-a-Mole_ game, but with a One Piece anime theme.
 
-Members of Strow Hat Pirates pop up randomly from holes. The player's goal is to click on them quickly to earn points before time run out. But watch out! Enemies (villains) will also appear. if you click on a villain, you lose one of 3 hearts. If you lose all your hearts, it's Game Over.
+The player chooses a character from One Piece and tries to get as many points as possible in 30 seconds.
 
-## User Stories
+The chosen character and Blackbeard appear randomly from barrels on the ship. Click your character to get points, but avoid Blackbeard because clicking him will make you lose a heart.
 
-- **As a player,** I can click "Start Game" to begin the timer and spawn characters.
-- **As a player,** I increase my score if I click on the Straw Hat crew (the friendly pirates).
-- **As a player,** I can see my remaining hearts on the screen.
-- **As a player,** I lose a heart if I click on a villain by mistake.
-- **As a player,** I get a "Game Over" message if I lose all 3 hearts or time runs out.
-- **As a player,** I can see the my final score at the end of the game.
+The game ends when the time runs out or the player loses all 3 hearts.
+
+## How to Play
+
+1. Choose your character.
+2. Click **Start** to begin.
+3. Click your character to get points.
+4. Avoid Blackbeard to keep your hearts.
+5. Try to get the highest score before time runs out.
+6. Click **Help** if you need to see the instructions.
+7. Play again when the game ends.
+
+## Features
+
+- Choose from 5 One Piece characters.
+- Random character positions on the ship.
+- Score counter.
+- 30-second timer.
+- 3 hearts.
+- Game Over message with the final score.
+- Help button.
+- Play Again button.
 
 ## Screenshots
 
