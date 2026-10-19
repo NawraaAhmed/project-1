@@ -140,8 +140,15 @@ function closeHelp() {
   closeHelpButton.classList.toggle("hidden");
 }
 
+function playAgain() {
+  startGame();
+}
+
 startButton.addEventListener("click", startGame);
+
 howToPlayButton.addEventListener("click", showHelp);
 closeHelpButton.addEventListener("click", closeHelp);
+
+playAgainButton.addEventListener("click", playAgain);
 
 boardElement.classList.add("hidden");
