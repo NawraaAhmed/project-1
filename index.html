@@ -22,54 +22,72 @@
         <button id="how-to-play">Help</button>
       </div>
 
-      <div class="board"></div>
+      <p id="message">Choose your character to start</p>
 
       <div id="select-character">
         <h2>Choose your Character</h2>
 
-        <div class="characters" id="Luffy">
-          <button class="crew">
+        <div class="characters">
+          <button class="crew" data-name="Luffy" data-img="./imges/luffy.png">
             <img src="./imges/luffy.png" alt="Luffy-img" />
             <p>Luffy</p>
           </button>
         </div>
 
-        <div class="characters" id="Zoro">
-          <button class="crew">
+        <div class="characters">
+          <button class="crew" data-name="Zoro" data-img="./imges/zoro.png">
             <img src="./imges/zoro.png" alt="Zoro-img" />
             <p>Zoro</p>
           </button>
         </div>
 
-        <div class="characters" id="Sanji">
-          <button class="crew">
+        <div class="characters">
+          <button class="crew" data-name="Sanji" data-img="./imges/sangi.png">
             <img src="./imges/sanji.png" alt="Sanji-img" />
             <p>Sanji</p>
           </button>
         </div>
 
-        <div class="characters" id="Nami">
-          <button class="crew">
+        <div class="characters">
+          <button class="crew" data-name="Nami" data-img="./imges/nami.png">
             <img src="./imges/nami.png" alt="Nami-img" />
             <p>Nami</p>
           </button>
         </div>
 
-        <div class="characters" id="Robin">
-          <button class="crew">
+        <div class="characters">
+          <button class="crew" data-name="Robin" data-img="./imges/robin.png">
             <img src="./imges/robin.png" alt="Robin-img" />
             <p>Robin</p>
           </button>
         </div>
       </div>
 
-      <div id="player-choice">
+      <!-- <div id="player-choice">
         <p></p>
       </div>
 
       <div class="hidden" id="pirate-screen">
         <div class="position" id="p1">kjkljkjkjk</div>
         <div class="position" id="p2">mmmmmm</div>
+      </div> -->
+
+      <section class="board" id="board">
+        <div class="hole" data-position="0"></div>
+        <div class="hole" data-position="1"></div>
+        <div class="hole" data-position="2"></div>
+        <div class="hole" data-position="3"></div>
+        <div class="hole" data-position="4"></div>
+        <div class="hole" data-position="5"></div>
+        <div class="hole" data-position="6"></div>
+        <div class="hole" data-position="7"></div>
+        <div class="hole" data-position="8"></div>
+      </section>
+
+      <div id="game-over" class="hidden">
+        <h2>Game Over!</h2>
+        <p>Your final score: <span id="final-score">0</span></p>
+        <button id="play-again">Play Again</button>
       </div>
     </main>
   </body>
