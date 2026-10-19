@@ -1,7 +1,7 @@
 /* const crew = [
   {
     name: "Luffy",
-    crewImg: "./imges/luffy-img.jpeg",
+    crewImg: "./imges/luffy.png",
   },
   {
     name: "Zoro",
@@ -9,19 +9,19 @@
   },
   {
     name: "Sanji",
-    crewImg: "./imges/sanji-img.jpeg",
+    crewImg: "./imges/sanji.png",
   },
   {
     name: "Nami",
-    crewImg: "./imges/nami-img.jpeg",
+    crewImg: "./imges/nami.png",
   },
   {
     name: "Robin",
-    crewImg: "./imges/robin-img.jpeg",
+    crewImg: "./imges/robin.png",
   },
 ]; */
 
-const villainImg = "./imges/blackbeard-img.jpeg";
+const villainImg = "./imges/blackbeard.png";
 const villainName = "Blackbeard";
 
 const scoreElement = document.querySelector("#score");
@@ -34,17 +34,19 @@ const characterSection = document.querySelector("#select-character");
 const boardElement = document.querySelector("#board");
 const holes = document.querySelectorAll(".hole");
 const messageElement = document.querySelector("#message");
+const HelpElement = document.querySelector("#show-help");
+const closeHelpButton = document.querySelector("#close");
 const gameOverElement = document.querySelector("#game-over");
 const finalScoreElement = document.querySelector("#final-score");
 const playAgainButton = document.querySelector("#play-again");
 
-// console.log(scoreElement);
-// console.log(timeElement);
-// console.log(livesElement);
-// console.log(startButton);
-// console.log(howToPlayButton);
+//console.log(scoreElement);
+//console.log(timeElement);
+//console.log(livesElement);
+//console.log(startButton);
+//console.log(howToPlayButton);
 //console.log(characterButtons);
-// console.log(selectCharacterElement);
+//console.log(selectCharacterElement);
 //console.log(boardElement);
 //console.log(holes);
 //console.log(messageElement);
@@ -71,7 +73,7 @@ function letsPlay(event) {
   });
 
   event.currentTarget.classList.add("selected");
-  messageElement.textContent = `You chose ${playerChoice}!`;
+  messageElement.textContent = `You chose ${playerChoice}`;
 
   /* playerChoiceMessage.textContent = `You chose ${playerChoice}`;
   setTimeout(() => {
@@ -105,21 +107,41 @@ function startGame() {
   scoreElement.textContent = score;
   timeElement.textContent = timeLeft;
   livesElement.textContent = "❤️❤️❤️";
-  gameOverElement.classList.add("hidden");
-  characterSection.classList.add("hidden");
-  boardElement.classList.remove("hidden");
 
   messageElement.textContent = "Click your pirate, but avoid Blackbeard";
 
-  startButton = true;
+  // startButton = true;
+  characterSection.classList.toggle("hidden");
+  gameOverElement.classList.toggle("hidden");
+  boardElement.classList.remove("hidden");
 
   //timer count down
   timer = setInterval(() => {
     timeLeft--;
     timeElement.textContent = timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      console.log("You Lose");
+    }
   }, 1000);
 }
 
+function showPirates() {
+  if (!gameRunning) {
+    return;
+  }
+}
+
+function showHelp() {
+  HelpElement.classList.remove("hidden");
+}
+
+function closeHelp() {
+  closeHelpButton.classList.toggle("hidden");
+}
+
 startButton.addEventListener("click", startGame);
+howToPlayButton.addEventListener("click", showHelp);
+closeHelpButton.addEventListener("click", closeHelp);
 
 boardElement.classList.add("hidden");
