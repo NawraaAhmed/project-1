@@ -63,7 +63,6 @@ characterButtons.forEach((button) => {
   button.addEventListener("click", letsPlay);
 });
 
-//const gameTime = 30;
 let popUpTimer;
 
 function startGame() {
@@ -72,14 +71,14 @@ function startGame() {
     return;
   }
 
+  //reset
+  clearInterval(timer);
+  clearInterval(popUpTimer);
+
   score = 0;
   lives = 3;
   timeLeft = gameTime;
   gameRunning = true;
-
-  //reset
-  clearInterval(timer);
-  clearInterval(popUpTimer);
 
   scoreElement.textContent = score;
   timeElement.textContent = timeLeft;
@@ -87,9 +86,9 @@ function startGame() {
 
   messageElement.textContent = "Click your pirate, but avoid Blackbeard";
 
-  HelpElement.classList.toggle("hidden");
-  characterSection.classList.toggle("hidden");
-  gameOverElement.classList.toggle("hidden");
+  HelpElement.classList.add("hidden");
+  characterSection.classList.add("hidden");
+  gameOverElement.classList.add("hidden");
   boardElement.classList.remove("hidden");
 
   showPirates();
@@ -105,6 +104,7 @@ function startGame() {
     }
   }, 1000);
 
+  //change very 1.3 sec
   popUpTimer = setInterval(showPirates, 1300);
 }
 
@@ -118,12 +118,33 @@ function showPirates() {
     hole.innerHTML = "";
   });
 
+  //random holes
   const playerPosition = Math.floor(Math.random() * holes.length);
   let villainPosition = Math.floor(Math.random() * holes.length);
 
   while (villainPosition === playerPosition) {
     villainPosition = Math.floor(Math.random() * holes.length);
   }
+
+  //player character
+  holes[playerPosition].innerHTML = `
+    <button class="pirate player">
+      <img src="${chosenImg}" alt="${playerChoice}">
+    </button>
+  `;
+
+  //blackbeard
+  holes[villainPosition].innerHTML = `
+    <button class="pirate villain">
+      <img src="${villainImg}" alt="Blackbeard">
+    </button>
+  `;
+
+  const pirates = document.querySelectorAll(".pirate");
+
+  pirates.forEach((pirate) => {
+    pirate.addEventListener("click", addPirate);
+  });
 }
 
 function addPirate(event) {
@@ -131,10 +152,12 @@ function addPirate(event) {
     return;
   }
 
+  //if player click on character
   if (event.currentTarget.classList.contains("player")) {
     score++;
     scoreElement.textContent = score;
   } else {
+    //click backbeard
     lives--;
     if (lives === 2) {
       livesElement.textContent = "❤️❤️💔";
@@ -145,6 +168,8 @@ function addPirate(event) {
       endGame();
     }
   }
+  //remove clicked character
+  event.currentTarget.innerHTML = "";
 }
 
 function endGame() {
@@ -169,7 +194,7 @@ function showHelp() {
 }
 
 function closeHelp() {
-  closeHelpButton.classList.add("hidden");
+  HelpElement.classList.add("hidden");
 }
 
 function playAgain() {
