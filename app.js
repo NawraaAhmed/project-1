@@ -126,6 +126,27 @@ function showPirates() {
   }
 }
 
+function addPirate(event) {
+  if (!gameRunning) {
+    return;
+  }
+
+  if (event.currentTarget.classList.contains("player")) {
+    score++;
+    scoreElement.textContent = score;
+  } else {
+    lives--;
+    if (lives === 2) {
+      livesElement.textContent = "❤️❤️💔";
+    } else if (lives === 1) {
+      livesElement.textContent = "❤️💔💔";
+    } else {
+      livesElement.textContent = "💔💔💔";
+      endGame();
+    }
+  }
+}
+
 function endGame() {
   gameRunning = false;
 
