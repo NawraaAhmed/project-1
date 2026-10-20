@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
 body {
   margin: 0;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: "Nunito", sans-serif;
   text-align: center;
   background-color: rgb(227, 227, 233);
 }
@@ -9,6 +11,12 @@ body {
 main {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+h1 {
+  font-family: "Pirata One", cursive;
+  font-size: 45px;
+  color: #173f5f;
 }
 
 .info {
@@ -23,6 +31,10 @@ main {
   padding: 10px;
   background-color: white;
   border-radius: 8px;
+}
+#message {
+  display: block;
+  margin: 5px 0 15px;
 }
 
 .buttons {
@@ -55,8 +67,13 @@ main {
   width: 105px;
   padding: 8px;
   border-radius: 10px;
-  border: white;
+  border: 3px solid transparent;
   background-color: white;
+  cursor: pointer;
+}
+
+.crew.selected {
+  border: 3px solid #159a9c;
 }
 
 img {
@@ -153,10 +170,17 @@ img {
 #show-help,
 #game-over {
   background-color: white;
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 15px;
-  border-radius: 8px;
+  color: black;
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
 }
 
 .hidden {
