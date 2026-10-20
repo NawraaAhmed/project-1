@@ -12,9 +12,9 @@
       <h1>Whack-a-Pirate 🏴‍☠️</h1>
 
       <div class="info">
-        <div class="score-box">Score: <span id="score">0</span></div>
-        <div class="time-box">Time: <span id="time">30</span></div>
-        <div class="lives-box">Lives: <span id="lives">❤️❤️❤️</span></div>
+        <div>Score: <span id="score">0</span></div>
+        <div>Time: <span id="time">30</span></div>
+        <div>Lives: <span id="lives">❤️❤️❤️</span></div>
       </div>
 
       <div class="buttons">
@@ -22,7 +22,7 @@
         <button id="how-to-play">Help</button>
       </div>
 
-      <p id="message">Choose your character to start</p>
+      <p id="message"></p>
 
       <div id="select-character">
         <h2>Choose your Character</h2>
@@ -63,16 +63,7 @@
         </div>
       </div>
 
-      <!-- <div id="player-choice">
-        <p></p>
-      </div>
-
-      <div class="hidden" id="pirate-screen">
-        <div class="position" id="p1">kjkljkjkjk</div>
-        <div class="position" id="p2">mmmmmm</div>
-      </div> -->
-
-      <section class="board" id="board">
+      <!--  <section id="board">
         <div class="hole" data-position="0"></div>
         <div class="hole" data-position="1"></div>
         <div class="hole" data-position="2"></div>
@@ -82,7 +73,7 @@
         <div class="hole" data-position="6"></div>
         <div class="hole" data-position="7"></div>
         <div class="hole" data-position="8"></div>
-      </section>
+      </section> -->
 
       <div id="show-help" class="hidden">
         <h2>How to Play Whack-a-Pirate:</h2>
@@ -92,6 +83,23 @@
         <p>4. Do not click on Blackbeard, or you lose a heart.</p>
 
         <button id="close">X</button>
+      </div>
+
+      <div class="board hidden">
+        <img
+          src="./imges/ship-background.png"
+          alt="ship-img"
+          class="ship-img"
+        />
+        <div class="hole" data-position="0"></div>
+        <div class="hole" data-position="1"></div>
+        <div class="hole" data-position="2"></div>
+        <div class="hole" data-position="3"></div>
+        <div class="hole" data-position="4"></div>
+        <div class="hole" data-position="5"></div>
+        <div class="hole" data-position="6"></div>
+        <div class="hole" data-position="7"></div>
+        <div class="hole" data-position="8"></div>
       </div>
 
       <div id="game-over" class="hidden">
