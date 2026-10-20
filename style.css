@@ -1,7 +1,14 @@
-main {
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
   text-align: center;
   background-color: rgb(227, 227, 233);
-  flex-wrap: wrap;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .info {
@@ -25,20 +32,22 @@ main {
   margin-top: 20px 0;
 }
 
-.buttons button,
-#close-help,
+#start-game,
+#how-to-play,
+#close,
 #play-again {
-  padding: 10px 18px;
+  padding: 10px 30px;
   border: #173f5f;
   border-radius: 8px;
   background-color: #173f5f;
   color: white;
+  margin: 5px;
 }
 
 .characters {
   display: inline-flex;
   justify-content: center;
-  margin: 15px 0;
+  margin: 15px;
   gap: 12px;
 }
 
@@ -55,10 +64,6 @@ img {
   height: 98px;
 }
 
-.hidden {
-  display: none;
-}
-
 .board {
   display: flex;
   align-items: center;
@@ -71,4 +76,90 @@ img {
   display: block;
   height: 100%;
   width: 100%;
+}
+.hole {
+  position: absolute;
+  width: 11%;
+  height: 16%;
+}
+/* top */
+.hole[data-position="0"] {
+  right: auto;
+  left: 33%;
+  top: 42%;
+  bottom: auto;
+}
+.hole[data-position="1"] {
+  right: auto;
+  left: 44%;
+  top: 42%;
+  bottom: auto;
+}
+.hole[data-position="2"] {
+  right: auto;
+  left: 56%;
+  top: 42%;
+  bottom: auto;
+}
+
+/* middel */
+.hole[data-position="3"] {
+  right: 20%;
+  left: 32%;
+  top: 54%;
+  bottom: 80%;
+}
+.hole[data-position="4"] {
+  right: 22%;
+  left: 44%;
+  top: 54%;
+  bottom: 99%;
+}
+.hole[data-position="5"] {
+  right: auto;
+  left: 56%;
+  top: 54%;
+  bottom: auto;
+}
+
+/* bottom */
+.hole[data-position="6"] {
+  right: auto;
+  left: 30%;
+  top: 66%;
+  bottom: auto;
+}
+.hole[data-position="7"] {
+  right: auto;
+  left: 43%;
+  top: 66%;
+  bottom: auto;
+}
+.hole[data-position="8"] {
+  right: auto;
+  left: 57%;
+  top: 66%;
+  bottom: auto;
+}
+
+.pirate {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+.pirate img {
+  border: none;
+}
+
+#show-help,
+#game-over {
+  background-color: white;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
 }
