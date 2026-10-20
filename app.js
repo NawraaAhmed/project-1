@@ -18,6 +18,8 @@ const winLoseMessageElement = document.querySelector("#winLoseMesssage");
 const finalScoreElement = document.querySelector("#final-score");
 const playAgainButton = document.querySelector("#play-again");
 const winLoseHeadingElement = document.querySelector("#winLoseHeading");
+const hintElement = document.querySelector("#hint");
+
 //console.log(scoreElement);
 //console.log(timeElement);
 //console.log(livesElement);
@@ -86,7 +88,7 @@ function startGame() {
   timeElement.textContent = timeLeft;
   livesElement.textContent = "❤️❤️❤️";
 
-  messageElement.textContent = "Click your pirate, but avoid Blackbeard";
+  hintElement.textContent = "Click your pirate, but avoid Blackbeard";
 
   HelpElement.classList.add("hidden");
   characterSection.classList.add("hidden");
@@ -100,8 +102,6 @@ function startGame() {
     timeLeft--;
     timeElement.textContent = timeLeft;
     if (timeLeft <= 0) {
-      //clearInterval(timer);
-      //console.log("You Lose");
       endGame();
     }
   }, 1000);
@@ -189,10 +189,10 @@ function endGame() {
   if (score >= 10) {
     winLoseHeadingElement.textContent = "You Win! 🎉🎉";
     winLoseMessageElement.textContent = "You Did Well";
-  } else if (score <= 9) {
+  } else if (score <= 9 && score >= 1) {
     winLoseHeadingElement.textContent = "Game Over!";
     winLoseMessageElement.textContent = "You Need to Whack More 😉";
-  } else if (lives === 0) {
+  } else if (score === 0 || lives === 0) {
     winLoseHeadingElement.textContent = "Game Over!";
     winLoseMessageElement.textContent = "You Lose 😞";
   }
@@ -200,6 +200,8 @@ function endGame() {
   finalScoreElement.textContent = score;
   gameOverElement.classList.remove("hidden");
   characterSection.classList.remove("hidden");
+
+  hintElement.textContent = "";
 }
 
 function showHelp() {
@@ -211,7 +213,16 @@ function closeHelp() {
 }
 
 function playAgain() {
-  startGame();
+  gameOverElement.classList.add("hidden");
+  boardElement.classList.add("hidden");
+  characterSection.classList.remove("hidden");
+
+  playerChoice = "";
+  chosenImg = "";
+
+  characterButtons.forEach((button) => {
+    button.classList.remove("selected");
+  });
 }
 
 startButton.addEventListener("click", startGame);
