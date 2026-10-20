@@ -14,9 +14,10 @@ const messageElement = document.querySelector("#message");
 const HelpElement = document.querySelector("#show-help");
 const closeHelpButton = document.querySelector("#close");
 const gameOverElement = document.querySelector("#game-over");
+const winLoseMessageElement = document.querySelector("#winLoseMesssage");
 const finalScoreElement = document.querySelector("#final-score");
 const playAgainButton = document.querySelector("#play-again");
-
+const winLoseHeadingElement = document.querySelector("#winLoseHeading");
 //console.log(scoreElement);
 //console.log(timeElement);
 //console.log(livesElement);
@@ -30,6 +31,7 @@ const playAgainButton = document.querySelector("#play-again");
 //console.log(gameOverElement);
 //console.log(finalScoreElement);
 //console.log(playAgainButton);
+// console.log(winLoseMessageElement);
 
 const gameTime = 30;
 
@@ -183,6 +185,17 @@ function endGame() {
   holes.forEach((hole) => {
     hole.innerHTML = "";
   });
+
+  if (score >= 10) {
+    winLoseHeadingElement.textContent = "You Win! 🎉🎉";
+    winLoseMessageElement.textContent = "You Did Well";
+  } else if (score <= 9) {
+    winLoseHeadingElement.textContent = "Game Over!";
+    winLoseMessageElement.textContent = "You Need to Whack More 😉";
+  } else if (lives === 0) {
+    winLoseHeadingElement.textContent = "Game Over!";
+    winLoseMessageElement.textContent = "You Lose 😞";
+  }
 
   finalScoreElement.textContent = score;
   gameOverElement.classList.remove("hidden");
